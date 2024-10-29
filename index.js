@@ -1,5 +1,8 @@
 const express = require("express");
-const { books } = require("./users.json");
+
+
+const userRouter = require('./routes/users.js');
+const booksRouter = require("./routes/books");
 
 const app = express();
 
@@ -7,39 +10,22 @@ const PORT =8081;
 
 app.use(express.json());
 
-app.get("/users", (req, res) => {
+http://localhost:8081/
+app.get("/", (req, res) => {
   res.status(200).json({
-    success: true,
-    data: books,
+    message: "Server is up and running :-)",
+    data: "hey",
   });
 });
 
-app.get("/",(req,res) => {
-    res.status(200).json({
-        message: "Server is up and running :-)",
-        data: "hey",
-    })
-})
+app.use("/users", userRouter);
+app.use("/books", booksRouter);
 
-/**
- * Route: /usersn
- * Method: GET
- * Description: Get all users
- * Access: Public
- * Parameters: None
- */
 
-app.get("/users", (req, res) => {
-    res.status(200).json({
-        success: true,
-        data: users,
+app.get("*", (req,res) => {
+    res.status(404).json({
+        message: "This route does't exists",
     });
-});
-
-app.get("*", (req, res) => {
-  res.status(404).json({
-    message: "This route doesn't exits",
-  });
 });
 
 app.listen(PORT, () => {

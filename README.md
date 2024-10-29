@@ -85,3 +85,20 @@ GET: Get all issued books with their fine
 ## npm init
 ## npm i nodemon --save-dev
 ## npm run dev
+
+
+
+
+...each
+"name": "Jane",
+       surname": "Doe",
+       "email": "user@email.com",
+       "subscriptionType": "Premium",
+       "subscriptionDate": "01/01/2022"  
+
+
+...data
+       "data":{
+    ## "name": "rohan",
+    ## "surame": "ghosh"
+}
