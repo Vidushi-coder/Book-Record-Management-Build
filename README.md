@@ -102,3 +102,8 @@ GET: Get all issued books with their fine
     ## "name": "rohan",
     ## "surame": "ghosh"
 }
+
+name: rohan
+surname: kinnal
+email: use@email.com
+subscriptionType" Premium
