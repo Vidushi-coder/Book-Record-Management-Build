@@ -110,7 +110,7 @@ router.put("/:id", (req, res) => {
     success: true,
     message: "user updated!!",
     data: updateUserData,
-  });
+  })
 });
 
 /**
